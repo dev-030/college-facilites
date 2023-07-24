@@ -14,10 +14,10 @@ export default function CollegeDetails ()  {
 
         <>
 
-        <div>
+        <div className="my-20">
 
 
-            <img src="/college.jpg" className="w-1/2 rounded-lg" />
+            <img src="/college.jpg" className="max-w-[80%] md:max-w-[50%] rounded-lg" />
             <div>
                 <h1><span className="font-bold">College Name :</span> {data?.collegeName}</h1>
                 <p><span className="font-bold">Admission Process :</span> {data?.admissionProcess}</p>

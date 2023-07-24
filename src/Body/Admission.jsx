@@ -75,7 +75,7 @@ export default function Admission() {
        
 
 
-        <div className="grid grid-cols-3 w-fit gap-7 mx-auto mt-20">
+        <div className="grid grid-cols-3 w-fit gap-7 mx-auto mt-20 mb-20">
 
             {!loading &&
                 data?.data?.map(data => <div key={data.Id} className="w-64 border p-2 rounded">
@@ -85,9 +85,9 @@ export default function Admission() {
                     <div>
 
                        
-                        <h1>{data.collegeName}</h1>
+                        <h1 className="text-xl font-semibold">{data.collegeName}</h1>
                         <p></p>
-                        <Link to={'/college-details'} state={data} className="my-5 outline outline-1 p-2 rounded-md mt-2 hover:bg-black hover:text-white">Details</Link>
+                        <Link to={'/college-details'} state={data} className="btn btn-outline btn-sm">Details</Link>
                         <button className="rounded-lg border p-1 cursor-pointer m-3 disabled:bg-gray-400 disabled:cursor-default" disabled={(userAdmitted?.data?.admittedCollege?.some(obj => obj.Id === data.Id))? true : false} onClick={()=>openModal(data)}>Admission</button>
 
                     </div>
@@ -106,19 +106,18 @@ export default function Admission() {
                 <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
                     <form className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg" onSubmit={admit}>
                         <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-                            <div className="sm:flex sm:items-start">
+                            <div className="">
                                 <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
-                                    <h3 className="text-base font-semibold leading-6 text-gray-900" id="modal-title">Deactivate account</h3>
-                                    <div>
-                                        <h1>Hello</h1>
-                                        Id : {collegeInfo?.Id}
-                                        <input type="text" placeholder="Name" className="border" id="name"/>
-                                        <input type="text" placeholder="Subject" className="border" id="subject"/>
-                                        <input type="email" placeholder="Email" className="border" id="email"/>
-                                        <input type="number" placeholder="Phone number" className="border" id="phoneNumber"/>
-                                        <input type="text" placeholder="Address" className="border" id="address"/>
-                                        <input type="text" placeholder="date of birth" className="border" id="dateOfBirth"/>
-                                        <input type="text" placeholder="image field" className="border" id="image"/>
+                                    <h3 className="font-semibold leading-6 text-gray-900 text-center text-xl pb-5" id="modal-title">Admission form</h3>
+                                    <div className="flex flex-col justify-center items-center gap-2">
+                                
+                                        <input required type="text" placeholder="Name" className="input input-bordered w-full max-w-xs" id="name"/>
+                                        <input required type="text" placeholder="Subject" className="input input-bordered w-full max-w-xs" id="subject"/>
+                                        <input required type="email" placeholder="Email" className="input input-bordered w-full max-w-xs" id="email"/>
+                                        <input required type="number" placeholder="Phone number" className="input input-bordered w-full max-w-xs" id="phoneNumber"/>
+                                        <input required type="text" placeholder="Address" className="input input-bordered w-full max-w-xs" id="address"/>
+                                        <input required type="text" placeholder="date of birth" className="input input-bordered w-full max-w-xs" id="dateOfBirth"/>
+                                        <input required type="text" placeholder="image field" className="input input-bordered w-full max-w-xs" id="image"/>
 
                                     </div>
                                 </div>

@@ -44,7 +44,7 @@ const router = createBrowserRouter([
       },
       {
         path : '/myCollege',
-        element : <MyCollege/>
+        element : <PrivateRoute><MyCollege/></PrivateRoute>
       },
       {
         path : '/profile',

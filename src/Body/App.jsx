@@ -13,7 +13,7 @@ function App() {
 
       <div className="overflow-hidden header flex items-center justify-center">
 
-        <input type="text" className="border border-black py-2 px-10 mt-[-100px] rounded" placeholder="Search college"/>
+        <input type="text" className="input input-bordered w-full max-w-xs mt-[-100px] " placeholder="Search college"/>
 
       </div>
       

@@ -32,10 +32,10 @@ export default function Colleges () {
                     <div>
 
                        
-                        <h1 className="pb-4">{data.collegeName}</h1>
+                        <h1 className="pb-4 text-xl font-semibold">{data.collegeName}</h1>
                         
 
-                        <Link to={'/college-details'} state={data} className="my-5 outline outline-1 p-2 rounded-md mt-2 hover:bg-black hover:text-white">Details</Link>
+                        <Link to={'/college-details'} state={data} className="btn btn-outline btn-sm">Details</Link>
 
 
                     </div>

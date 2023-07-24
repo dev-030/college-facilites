@@ -45,7 +45,7 @@ export default function Featured() {
                     <p> <span className="font-semibold">Research History :</span> {data.researchHistory}</p>
                     <div className="flex"><p className="font-semibold">Sports:</p> <span className="pl-1 flex flex-wrap gap-4"> {data?.sports.map(data => <span key={data.name} >{data.name}</span> )} </span></div>
                 </div>
-                <Link to={'/college-details'} state={data} className="border border-black my-5 p-2 cursor-pointer rounded-lg text-center">Details</Link>
+                <Link to={'/college-details'} state={data} className="btn btn-outline my-5">Details</Link>
 
            
 

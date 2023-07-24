@@ -34,7 +34,7 @@ export default function MyCollege () {
 
         <>
 
-        {
+        {/* {
             data?.data?.admittedCollege?.map(data => 
             <div key={data._id}>
                 <h1>Name : {data.collegeName}</h1>
@@ -47,7 +47,47 @@ export default function MyCollege () {
                 </form>
 
             </div>)
+        } */}
+
+
+
+{
+            data?.data?.admittedCollege?.map(data => 
+            <div key={data._id} className="mb-12">
+               
+                <div>
+
+
+                <img src="/college.jpg" className="w-1/2 rounded-lg" />
+                <div>
+                    <h1><span className="font-bold">College Name :</span> {data?.collegeName}</h1>
+                    <p><span className="font-bold">Admission Process :</span> {data?.admissionProcess}</p>
+                    <div><span className="font-bold">Events :</span> {data?.events.map(data => <div key={data.name}>
+                        {data?.name} : 
+                        {data?.description}
+                        {data?.date}
+                        {data?.location}
+                        </div>)}</div>
+                    <p><span className="font-bold">Research Works :</span> {data?.researchHistory}</p>
+                    <div><span className="font-bold">Sports :</span> {data?.sports.map(data => <div key={data.name}>
+                        <span className="font-semibold">{data?.name} : </span> 
+                        {data?.description}
+                    </div> )}</div>
+                </div>
+                </div>
+
+                <h1 className="text-xl font-bold mt-3">Give review </h1>
+
+                <form onSubmit={(event)=>reviewSubmit(event,data)}>
+                <textarea required id="textArea" className="border" rows="4" cols="50"></textarea>
+                <br/>
+                <input type="submit" value="Submit" className="btn btn-outline btn-sm "/>
+                </form>
+
+            </div>)
         }
+
+
         
         
         </>
