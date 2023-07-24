@@ -32,8 +32,9 @@ export default function Navbar () {
 
 
         <div className="flex justify-between container mx-auto pt-2 bg-transparent items-center">
-            <h1 className="text-2xl font-bold">College <span>Finder</span></h1>
-            <ul className="flex gap-10 font-semibold items-center">
+            <a href="/" className="text-2xl font-bold">College <span>Finder</span></a>
+            <ul className="flex gap-10 font-semibold items-center ">
+                <div className="md:flex gap-10 font-semibold items-center hidden">
                 <NavLink to={'/'}>Home</NavLink>
                 <NavLink to={'/colleges'}>Colleges</NavLink>
                 {!loading && user &&
@@ -42,6 +43,9 @@ export default function Navbar () {
                 {!loading && user &&
                     <NavLink to={'/myCollege'}>My college</NavLink>
                 }
+
+                </div>
+                
                 {!loading && !user && 
                 <Link to={'/login'} className="bg-black text-white p-2 rounded">Login</Link>
                 }

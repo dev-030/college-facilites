@@ -18,7 +18,6 @@ export default function Featured() {
     })
 
 
-    console.log(data?.data)
 
 
     return(
@@ -42,9 +41,9 @@ export default function Featured() {
                 <div>
                     <h1 className="text-lg font-semibold">{data.collegeName}</h1>
                     <p><span className="font-semibold">Admission :</span> {data.admissionDates.start} to {data.admissionDates.end}</p>
-                    <div className="flex"> <p className="font-semibold">Events :</p>  <span> {data?.events.map(data => <span className="pl-1 grid">{data.name}</span> )} </span> </div>
+                    <div className="flex"> <p className="font-semibold">Events :</p>  <span> {data?.events.map(data => <span key={data.name} className="pl-1 grid">{data.name}</span> )} </span> </div>
                     <p> <span className="font-semibold">Research History :</span> {data.researchHistory}</p>
-                    <div className="flex"><p className="font-semibold">Sports:</p> <span className="pl-1 flex flex-wrap gap-4"> {data?.sports.map(data => <span >{data.name}</span> )} </span></div>
+                    <div className="flex"><p className="font-semibold">Sports:</p> <span className="pl-1 flex flex-wrap gap-4"> {data?.sports.map(data => <span key={data.name} >{data.name}</span> )} </span></div>
                 </div>
                 <Link to={'/college-details'} state={data} className="border border-black my-5 p-2 cursor-pointer rounded-lg text-center">Details</Link>
 

@@ -21,6 +21,7 @@ import NotFound from './Body/NotFound.jsx';
 import AuthProvider from './authentication/AuthProvider.jsx';
 import Profile from './Body/components/Profile.jsx';
 import CollegeDetails from './Body/components/collegeDetails.jsx';
+import PrivateRoute from './authentication/PrivateRoute.jsx';
 
 const queryClient = new QueryClient()
 
@@ -51,7 +52,7 @@ const router = createBrowserRouter([
       },
       {
         path : '/college-details',
-        element : <CollegeDetails/>
+        element : <PrivateRoute><CollegeDetails/></PrivateRoute>
       }
     ]
   },
