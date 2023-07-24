@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useQuery } from "react-query";
 import { baseUrl } from "../authentication/AuthProvider";
+import { Link } from "react-router-dom";
 
 
 export default function Colleges () {
@@ -31,10 +32,11 @@ export default function Colleges () {
                     <div>
 
                        
-                        <h1>{data.collegeName}</h1>
-                        <p></p>
+                        <h1 className="pb-4">{data.collegeName}</h1>
+                        
 
-                        <button className="outline outline-1 p-2 rounded-md mt-2 hover:bg-black hover:text-white">Details</button>
+                        <Link to={'/college-details'} state={data} className="my-5 outline outline-1 p-2 rounded-md mt-2 hover:bg-black hover:text-white">Details</Link>
+
 
                     </div>
                     

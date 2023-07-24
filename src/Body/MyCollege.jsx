@@ -22,11 +22,11 @@ export default function MyCollege () {
         enabled : !loading
     })
 
-    // console.log(data?.data?.admittedCollege)
 
-    const reviewSubmit = (event)  => {
+    const reviewSubmit = (event,data)  => {
         event.preventDefault();
-        console.log(event.target.textArea.value)
+        const review = {review:event.target.textArea.value,collegeData:data}
+        axios.post(`${baseUrl}/collegereview`,{body:review}).then(data => console.log(data))
     }
 
 
@@ -38,11 +38,12 @@ export default function MyCollege () {
             data?.data?.admittedCollege?.map(data => 
             <div key={data._id}>
                 <h1>Name : {data.collegeName}</h1>
+                <h1>Id : {data._id}</h1>
 
-                <form onSubmit={reviewSubmit}>
+                <form onSubmit={(event)=>reviewSubmit(event,data)}>
                 <textarea id="textArea" className="border" rows="4" cols="50"></textarea>
                 <br/>
-                <input type="submit" value="Submit" className="border p-2"/>
+                <input type="submit" value="Submit" className="border p-2 cursor-pointer"/>
                 </form>
 
             </div>)

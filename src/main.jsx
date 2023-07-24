@@ -19,6 +19,8 @@ import Login from './Body/components/Login/Login.jsx';
 import Register from './Body/components/Register/Register.jsx';
 import NotFound from './Body/NotFound.jsx';
 import AuthProvider from './authentication/AuthProvider.jsx';
+import Profile from './Body/components/Profile.jsx';
+import CollegeDetails from './Body/components/collegeDetails.jsx';
 
 const queryClient = new QueryClient()
 
@@ -42,6 +44,14 @@ const router = createBrowserRouter([
       {
         path : '/myCollege',
         element : <MyCollege/>
+      },
+      {
+        path : '/profile',
+        element : <Profile/>
+      },
+      {
+        path : '/college-details',
+        element : <CollegeDetails/>
       }
     ]
   },

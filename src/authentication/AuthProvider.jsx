@@ -24,7 +24,7 @@ const userLogout = () => {
 }
 
 
-export const baseUrl = 'https://test-2yzf.onrender.com';
+export const baseUrl = 'https://frantic-tunic-fawn.cyclic.app';
 
 
 export default function AuthProvider({children}) {

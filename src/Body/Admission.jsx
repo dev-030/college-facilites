@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import { useQuery } from "react-query";
 import { authContext, baseUrl } from "../authentication/AuthProvider";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 
 export default function Admission() {
@@ -86,7 +87,8 @@ export default function Admission() {
                        
                         <h1>{data.collegeName}</h1>
                         <p></p>
-                        <button className="border p-1 cursor-pointer m-3 disabled:bg-gray-400 disabled:cursor-default" disabled={(userAdmitted?.data?.admittedCollege?.some(obj => obj.Id === data.Id))? true : false} onClick={()=>openModal(data)}>Admission</button>
+                        <Link to={'/college-details'} state={data} className="my-5 outline outline-1 p-2 rounded-md mt-2 hover:bg-black hover:text-white">Details</Link>
+                        <button className="rounded-lg border p-1 cursor-pointer m-3 disabled:bg-gray-400 disabled:cursor-default" disabled={(userAdmitted?.data?.admittedCollege?.some(obj => obj.Id === data.Id))? true : false} onClick={()=>openModal(data)}>Admission</button>
 
                     </div>
                     
